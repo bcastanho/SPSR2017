@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-This file contains reproduction codes for the results presented in Castanho Silva, Bruno, Federico Vegetti, and Levente Littvay. 2017. The Elite is up to Something: Exploring the Relation Between Populism and Belief in Conspiracies. \textit{Swiss Political Science Review}, doi: 10.1111/spsr.12270: http://onlinelibrary.wiley.com/doi/10.1111/spsr.12270/full.
+This file contains reproduction codes for the results presented in Castanho Silva, Bruno, Federico Vegetti, and Levente Littvay. 2017. The Elite is up to Something: Exploring the Relation Between Populism and Belief in Conspiracies. Swiss Political Science Review, doi: 10.1111/spsr.12270: http://onlinelibrary.wiley.com/doi/10.1111/spsr.12270/full.
 
 ## Preliminary steps:
 
