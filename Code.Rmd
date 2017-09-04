@@ -21,77 +21,12 @@ Please find the respective codebooks here:
 
 ## Preliminary steps:
 
-Libraries:
+Library and data:
 
 ```{r message=F}
 library(lavaan)
-```
-
-Reading and cleaning the 2014 sample:
-
-```{r warnings=F}
-data<-read.csv('polberg_mturk_0114_v1.1.3_numbers_only.csv',header=F)
-varnames <- unlist(strsplit(readLines("variable_list_final.txt"), ' '))
-names(data)<-varnames
-data[data==-999]<-NA
-data$age <- 2014 - data$year
-data$degree[data$degree == 8]<-NA
-
-data$white<-0
-data$white[data$race == 5]<-1
-data$white[data$race == 'NA']<-NA
-
-data$extr<-abs(4-data$ideo)
-
-data$lib<-NA
-data$lib[data$ideo < 4]<-1
-data$lib[data$ideo > 3]<-0
-
-data$edu<-NA
-data$edu[data$hsdipl == 2]<-1
-data$edu[data$hsdipl == 1]<-2
-data$edu[data$degree == 8]<-3
-data$edu[data$degree == 7]<-4
-data$edu[data$degree == 1]<-5
-data$edu[data$degree == 2]<-6
-data$edu[data$degree == 4]<-6
-data$edu[data$degree == 3]<-7
-data$edu[data$degree == 5]<-7
-data$edu[data$degree == 6]<-7
-```
-
-Reading and cleaning the 2015 sample:
-
-```{r warnings=F}
-pop<-read.csv('populism.survey.2015.pooled.v1.0.MPLUS.csv')
-varnames <- unlist(strsplit(readLines("varnames2.txt"), ','))
-colnames(pop)<-varnames
-
-pop[pop == -999]<-NA
-
-pop$age <- 2015 - pop$year
-
-pop$white<-0
-pop$white[pop$ethnic == 5]<-1
-pop$white[pop$race == 'NA']<-NA
-
-pop$extr<-abs(4-pop$aneslr)
-
-pop$lib<-NA
-pop$lib[pop$aneslr < 4]<-1
-pop$lib[pop$aneslr > 3]<-0
-
-pop$edu<-NA
-pop$edu[pop$highsch == 2]<-1
-pop$edu[pop$highsch == 1]<-2
-pop$edu[pop$degree == 8]<-3
-pop$edu[pop$degree == 7]<-4
-pop$edu[pop$degree == 1]<-5
-pop$edu[pop$degree == 2]<-6
-pop$edu[pop$degree == 4]<-6
-pop$edu[pop$degree == 3]<-7
-pop$edu[pop$degree == 5]<-7
-pop$edu[pop$degree == 6]<-7
+data<-read.csv('mturk2014.csv')
+pop<-read.csv('mturk2015.csv')
 ```
 
 ## Table 2
